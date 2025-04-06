@@ -20,7 +20,7 @@ var signal = []string{"test"}
 var wg sync.WaitGroup // pointer
 var mutex sync.Mutex  //pointer
 
-func main() {
+func main_() {
 	// =================Arrays=============================
 	var arr [4]string
 	arr[0] = "ram"

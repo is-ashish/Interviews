@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-func main() {
+func main_() {
 	// array should be sorted
 	arr1 := []int{2, 6, 7, 8, 9, 12, 43, 56, 78, 89}
 	arr2 := []int{1, 3, 4, 5, 8}
-	mergeTwoArraySorted2(arr1,arr2)
+	mergeTwoArraySorted2(arr1, arr2)
 }
 
-// with temp array 
-func mergeTwoArraySorted1(arr1[] int, arr2[] int){
+// with temp array
+func mergeTwoArraySorted1(arr1 []int, arr2 []int) {
 	res := []int{}
 	j := 0
 	k := 0
@@ -34,7 +34,7 @@ func mergeTwoArraySorted1(arr1[] int, arr2[] int){
 }
 
 // without taking extra array ------------ Pemding
-func mergeTwoArraySorted2(arr1[] int, arr2[] int){
+func mergeTwoArraySorted2(arr1 []int, arr2 []int) {
 	res := []int{}
 	j := 0
 	k := 0

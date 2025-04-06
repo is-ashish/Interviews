@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func main_() {
 	f, err := os.Open("./asic.go")
 	if err != nil {
 		fmt.Println(err)

@@ -20,7 +20,7 @@ func colorize(color Color, message string) {
 	fmt.Println(string(color), message, string(ColorReset))
 }
 
-func main() {
+func main_() {
 	useColor := flag.Bool("color", false, "display colorized output")
 	flag.Parse()
 

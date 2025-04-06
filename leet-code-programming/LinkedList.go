@@ -15,7 +15,7 @@ type LinkedList struct {
 	tail   *Node
 }
 
-func main() {
+func main_() {
 	l := LinkedList{}
 	l.add(2)
 	l.add(6)
@@ -65,34 +65,34 @@ func (l *LinkedList) display(node *Node) {
 	fmt.Println()
 }
 
-func (l *LinkedList) deleteFirstNode(node *Node) *Node{
-		if node.next == nil{
-			node = nil
-		}else{
-			node = node.next
-		}
-		return node
+func (l *LinkedList) deleteFirstNode(node *Node) *Node {
+	if node.next == nil {
+		node = nil
+	} else {
+		node = node.next
+	}
+	return node
 }
 
 // Merge two sorted linked lists
 func (l *LinkedList) mergeSortedLists(list1 *Node, list2 *Node) {
 	head1 := list1
 	head2 := list2
-	list3:= LinkedList{}
-	for head1 !=nil && head2 != nil{
-		if head1.val < head2.val{
+	list3 := LinkedList{}
+	for head1 != nil && head2 != nil {
+		if head1.val < head2.val {
 			list3.add(head1.val)
 			head1 = l.deleteFirstNode(head1)
-		}else{
+		} else {
 			list3.add(head2.val)
 			head2 = l.deleteFirstNode(head2)
 		}
 	}
 
-	if head1 !=nil{
+	if head1 != nil {
 		list3.tail.next = head1
 	}
-	if head2 !=nil{
+	if head2 != nil {
 		list3.tail.next = head2
 	}
 	list3.display(list3.head)
@@ -101,22 +101,21 @@ func (l *LinkedList) mergeSortedLists(list1 *Node, list2 *Node) {
 // Merge two sorted linked lists -- using recursion
 func (l *LinkedList) mergeSortedListsRecursion(list1 *Node, list2 *Node) *Node {
 	var result *Node = nil
-	if list1 == nil{
+	if list1 == nil {
 		return list2
 	}
-	if list2 == nil{
+	if list2 == nil {
 		return list1
 	}
-	if list1.val<=list2.val{
+	if list1.val <= list2.val {
 		result = list1
-		result.next =  l.mergeSortedListsRecursion(list1.next,list2)
-	}else{
+		result.next = l.mergeSortedListsRecursion(list1.next, list2)
+	} else {
 		result = list2
-		result.next = l.mergeSortedListsRecursion(list1,list2.next)
+		result.next = l.mergeSortedListsRecursion(list1, list2.next)
 	}
 	return result
 }
-
 
 // With Iterations --
 func (l *LinkedList) reverseList(list1 *Node) *Node {
@@ -125,7 +124,7 @@ func (l *LinkedList) reverseList(list1 *Node) *Node {
 	var cur_node *Node = list1
 	var next_node *Node = nil
 
-	for cur_node !=nil{
+	for cur_node != nil {
 		next_node = cur_node.next
 		cur_node.next = prev_node
 		prev_node = cur_node
@@ -133,7 +132,6 @@ func (l *LinkedList) reverseList(list1 *Node) *Node {
 	}
 	return prev_node
 }
-
 
 // reverse linkedlist using recursion-: method-1
 func (l *LinkedList) reverseListRecursion1(head *Node, cur_node *Node, prev_node *Node) *Node {
@@ -147,11 +145,11 @@ func (l *LinkedList) reverseListRecursion1(head *Node, cur_node *Node, prev_node
 	return l.reverseListRecursion(head, forward, cur_node)
 }
 
-// reverse linkedlist using recursion-: method-2 
+// reverse linkedlist using recursion-: method-2
 
 func (l *LinkedList) reverseListRecursion2(head *Node) *Node {
 
-	if head == nil || head.next == nil{
+	if head == nil || head.next == nil {
 		return head
 	}
 	var small_head *Node = reverseListRecursion2(head.next)
@@ -159,4 +157,3 @@ func (l *LinkedList) reverseListRecursion2(head *Node) *Node {
 	head.next = nil
 	return small_head
 }
-

@@ -2,254 +2,289 @@ package main
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
 )
 
-func main() {
-	l := LinkedList{}
-	l.add(4)
-	l.add(2)
-	l.add(1)
-	l.add(7)
-	l.add(9)
-	l.display(l.head)
-	l.splitList(l.head)
+func main_() {
+	// n := 5
+	fmt.Println("Subset of string -->", subsetStringCount("abc", ""))
+	fmt.Println("----------- Main Completed--------------")
 }
 
-// Say number eg = 134
-// ans = one,three,four
-func sayNumber(num int) {
-	numberName := []string{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
-	if num == 0 {
-		return
+func SumOfNaturalNo(n int) int {
+	if n <= 0 {
+		return 0
 	}
-	rem := num % 10
-	num = num / 10
-	sayNumber(num)
-	fmt.Printf(numberName[rem] + ",")
-}
-// sum of array elements = []int{1,2,3,4,5,6,7,8}
-// and = 36
-func sumOfarrayElements(arr []int, sum int) {
-	len := len(arr)
-	if len == 0 {
-		fmt.Println("Sum of array Elements is -->>", sum)
-		return
-	}
-	sum = sum + arr[len-1]
-	arr = arr[:len-1]
-	sumOfarrayElements(arr, sum)
+	sum := n + SumOfNaturalNo(n-1)
+	fmt.Println(n)
+	return sum
 }
 
-// check array is sorted or not ??
-func IsSortedElements(arr []int) {
-	len := len(arr)
-	if len == 0 || len == 1 {
-		fmt.Println("True")
+//First uppercase letter in a string (Iterative and Recursive)
+// Input : geeksforgeeKs
+// Output : K
+
+func firstUpperCase(str []byte, i int) byte {
+	if len(str) == i {
+		fmt.Println("Not found uppercase")
+		return '_'
+	}
+
+	if str[i] >= 'A' && str[i] <= 'Z' {
+		return str[i]
+	}
+	return firstUpperCase(str, i+1)
+}
+
+// maze problem find no of path including diagonal
+// Print all path from matrix using backtracking
+
+func maze(ans string, r, c int) {
+	if r == 1 && c == 1 {
+		fmt.Println(ans)
 		return
 	}
-	if arr[len-2] <= arr[len-1] {
-		arr = arr[:len-1]
-		IsSortedElements(arr)
-	} else {
-		fmt.Println("False")
-		return
+	if r > 1 {
+		maze(ans+"C", r-1, c)
+	}
+	if r > 1 && c > 1 {
+		maze(ans+"X", r-1, c-1)
+	}
+	if c > 1 {
+		maze(ans+"R", r, c-1)
 	}
 }
 
-//search element in array
-func searchElements(arr []int, key int) {
-	len := len(arr)
-	if len == 0 {
-		fmt.Println("Element not found")
+func diceNo(target int, ans string) {
+	if target == 0 {
+		fmt.Println(ans)
 		return
 	}
-	if arr[len-1] == key {
-		fmt.Println("Element found at inex ->", len-1)
-		return
+	for i := 1; i <= target; i++ {
+		numStr := strconv.Itoa(i)
+		diceNo(target-i, ans+numStr)
 	}
-	arr = arr[:len-1]
-	searchElements(arr, key)
 }
 
+// https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+func letterCombinations(digits, ans string) []string {
+	latterMap := [][]string{{"0", "0", "0"}, {"0", "0", "0"}, {"a", "b", "c"}, {"d", "e", "f"}, {"g", "h", "i"}, {"j", "k", "l"}, {"m", "n", "o"}, {"p", "q", "r", "s"}, {"t", "u", "v"}, {"w", "x", "y", "z"}}
 
-//Binary search
-func binarySearch(arr []int, key int) {
-	s := 0
-	e := len(arr) - 1
-	fmt.Println(isElementFound(arr, s, e, key))
+	if len(digits) == 0 {
+		return []string{ans}
+	}
+	num, _ := strconv.Atoi(string(digits[0]))
+	var str []string
+	str = append(str, letterCombinations(digits[1:], ans+latterMap[num][0])...)
+	str = append(str, letterCombinations(digits[1:], ans+latterMap[num][1])...)
+	str = append(str, letterCombinations(digits[1:], ans+latterMap[num][2])...)
+	return str
 }
-func isElementFound(arr []int, s, e, key int) bool {
-	mid := s + (e-s)/2
-	if s <= e {
-		if arr[mid] == key {
-			fmt.Println("Element found at index -->>", mid)
+
+// Permutation in string
+// Given two strings s1 and s2, return true if s2 contains a
+// permutation of s1, or false otherwise.
+// https://leetcode.com/problems/permutation-in-string/description/
+func checkInclusion(s1 string, s2 string) bool {
+	if len(s1) > len(s2) {
+		return false
+	}
+	var s1Count, s2Count [26]int
+	for i := range s1 {
+		s1Count[s1[i]-'a']++
+		s2Count[s2[i]-'a']++
+	}
+	for j := len(s1); j < len(s2); j++ {
+		if s1Count == s2Count {
 			return true
 		}
-		if arr[mid] < key {
-			return isElementFound(arr, mid+1, e, key)
-		} else {
-			return isElementFound(arr, s, mid-1, key)
-		}
+		s2Count[s2[j]-'a']++
+		s2Count[s2[j-len(s1)]-'a']--
+	}
+
+	return s1Count == s2Count
+}
+
+// for i=0, ans[0:0] and ans[0:2]
+// for i=1, ans[0:1] and ans[1:2]
+// for i=2, ans[0:2] and ans[2:2]
+// https://go.dev/play/p/llrbUFxW6kJ
+
+func permutation(str, ans string) int {
+	if len(str) == 0 {
+		return 1
+	}
+	count := 0
+	for i := 0; i <= len(ans); i++ {
+		s := ans[0:i]
+		f := ans[i:len(ans)]
+		count = count + permutation(str[1:], s+string(str[0])+f)
+	}
+	return count
+}
+
+// find all subset of strings Count
+func subsetStringCount(str, ans string) int {
+	if len(str) == 0 {
+		return 1
+	}
+	// str[1:] =  cut first index of string
+	temp := subsetStringCount(str[1:], ans+string(str[0])) + subsetStringCount(str[1:], ans)
+	return temp
+}
+
+// find all subset of strings
+func subsetString(str, ans string) string {
+	if len(str) == 0 {
+		return ans
+	}
+	// str[1:] =  cut first index of string
+	temp := subsetString(str[1:], ans+string(str[0])) + ", " + subsetString(str[1:], ans)
+	return temp
+}
+
+// remove specific string eg "ac" from given string
+func removeString(str string) string {
+	if len(str) == 0 {
+		return str
+	}
+	if strings.HasPrefix(str, "ace") {
+		return removeString(str[3:])
 	} else {
+		return string(str[0]) + removeString(str[1:])
+	}
+}
+
+// Pending
+// https://leetcode.com/problems/remove-all-occurrences-of-a-substring/
+func removeOccurrences(str, part, ans string, i int) string {
+
+	if i == len(str)-len(part) {
+		return ans
+	}
+	if str[i:i+len(part)] != part {
+		ans = ans + str[i:i+1]
+		fmt.Println("checking ------1 ", ans, "-----2 ", str[i:i+len(part)])
+		return removeOccurrences(str, part, ans, i+1)
+	} else {
+		fmt.Println("found -->", ans)
+		return removeOccurrences(str, part, ans, i+2)
+	}
+
+}
+
+// remove A's from a given strings: Pattern --- 2
+func removeAs_2(str string) string {
+	if len(str) == 0 {
+		return str
+	}
+	if string(str[0]) == "a" {
+		return removeAs_2(str[1:])
+	} else {
+		return string(str[0]) + removeAs_2(str[1:])
+	}
+}
+
+// remove A's from a given strings: Pattern --- 1
+func removeAs_1(str, ans string) string {
+	if len(str) == 0 {
+		return ans
+	}
+	if string(str[0]) == "a" {
+		return removeAs_1(str[1:], ans)
+	} else {
+		return removeAs_1(str[1:], ans+string(str[0]))
+	}
+}
+
+func linearSearch(arr []int, i, e, key int) bool {
+
+	if i == e && arr[i] != key {
 		return false
 	}
+	return arr[i] == key || linearSearch(arr, i+1, e, key)
 }
 
-//reverse string
-func reverseGivenString(str string, j int) string {
-	if j < 0 {
-		return ""
-	}
-	return string(str[j]) + reverseGivenString(str, j-1)
-}
+func isShorted(arr []int, i, e int) bool {
 
-// check palindrome string
-func checkPalindromeGivenString(str string, i, j int) bool {
-	if i > j {
+	if i == e {
 		return true
 	}
-	if str[i] == str[j] {
-		return checkPalindromeGivenString(str, i+1, j-1)
-	} else {
-		return false
-	}
+	return arr[i] < arr[i+1] && isShorted(arr, i+1, e)
 }
 
-//Optimise 2^1024 power
-func OptimisePower(x, y int) int {
-	if y == 1 {
+func sampleFunction(i int) {
+	if i > 5 {
+		return
+	}
+	fmt.Println("Hello, World!--", i)
+	sampleFunction(i + 1)
+	fmt.Println("functioon call completed-->", i)
+}
+
+// fmt.Println("found element", fibbonocci(50))
+func fibbonocci(term int) int {
+	if term < 2 {
+		return term
+	}
+	return fibbonocci(term-1) + fibbonocci(term-2)
+}
+
+// fmt.Println("found element", binarySearch(1, 100, 82))
+func binarySearch(s, e, f int) int {
+	mid := (s + e) / 2
+	if mid == f {
+		return mid
+	}
+	if f < mid {
+		return binarySearch(s, mid, f)
+	}
+	return binarySearch(mid, e, f)
+}
+
+// printNo(6)
+func printNo(x int) {
+	if x <= 0 {
+		return
+	}
+	fmt.Print(x)
+	printNo(x - 1)
+	fmt.Println("z", x)
+}
+
+// fmt.Println(factorial(10))
+func sumNo(x int) int {
+	if x <= 1 {
+		return 1
+	}
+	return x + sumNo(x-1)
+}
+
+// fmt.Println(sumOfDigits(1111111111))
+func sumOfDigits(x int) int {
+	if x == 0 {
 		return x
 	}
-	ans := OptimisePower(x, y/2)
-	if y%2 == 0 {
-		return ans * ans
-	} else {
-		return x * ans * ans
-	}
+	return x%10 + sumOfDigits(x/10)
 }
 
-//Bubble sort 
-func bubbleSort(arr []int, l int) {
-	if l == 0 {
-		fmt.Println(arr)
+// fmt.Println(mulOfDigits(1111111111))
+func mulOfDigits(x int) int {
+	if x%10 == x {
+		return x
+	}
+	return x % 10 * mulOfDigits(x/10)
+}
+
+func zeroNo(n int, count int) {
+	if n == 0 {
+		fmt.Println("No of count", count)
 		return
 	}
-	for j := 0; j < l-1; j++ {
-		var temp int
-		if arr[j+1] < arr[j] {
-			temp = arr[j]
-			arr[j] = arr[j+1]
-			arr[j+1] = temp
-		}
+	r := n % 10
+	if r == 0 {
+		count++
 	}
-	bubbleSort(arr, l-1)
+	zeroNo(n/10, count)
 }
-
-// merge sorting devide
-func devide(arr []int) []int {
-	l := len(arr)
-	if l <= 1 {
-		return arr
-	}
-	mid := l / 2
-	s := devide(arr[:mid])
-	e := devide(arr[mid:])
-	return mergeSort(s, e)
-}
-
-// merge sorting conquer
-func mergeSort(l, r []int) []int {
-	res := make([]int, 0, len(l)+len(r))
-	for len(l) > 0 || len(r) > 0 {
-		if len(l) == 0 {
-			return append(res, r...)
-		}
-		if len(r) == 0 {
-			return append(res, l...)
-		}
-		if l[0] <= r[0] {
-			res = append(res, l[0])
-			l = l[1:]
-		} else {
-			res = append(res, r[0])
-			r = r[1:]
-		}
-	}
-	return res
-}
-
-// Linked List merge sort --- advance
-
-func (l *LinkedList) add(data int) {
-	node := &Node{val: data, next: nil}
-	if l.head == nil {
-		l.head = node
-		l.tail = node
-		l.length++
-	} else {
-		l.tail.next = node
-		l.tail = node
-		l.length++
-		return
-	}
-}
-
-func (l *LinkedList) display(node *Node) {
-	if node == nil {
-		fmt.Println("Nil")
-	}
-	if node.next == nil {
-		fmt.Printf("%v -> ", node.val)
-	}
-	for node != nil {
-		fmt.Printf("%v -> ", node.val)
-		node = node.next
-	}
-	fmt.Printf("Nil")
-	fmt.Println()
-}
-
-func (l *LinkedList) devideList(node *Node) *Node{
-	// find middle element of list
-	fast_ptr := node 
-	slow_ptr := node
-	if node.next == nil{
-		return node
-	}
-	// middle element
-	for fast_ptr !=nil && fast_ptr.next !=nil{
-		fast_ptr  = fast_ptr.next.next
-		slow_ptr = slow_ptr.next
-	}
-	fmt.Println("middle of list is -->",slow_ptr.val)
-	temp := slow_ptr
-	slow_ptr = nil
-	s := l.devideList(node)
-	e := l.devideList(temp)
-	return mergeSortList(s, e)
-}
-
-func (l *LinkedList) splitListHalf(node *Node) {
-	fast_ptr := node
-	slow_ptr := node
-	for fast_ptr.next != nil && fast_ptr != nil {
-		fast_ptr = fast_ptr.next.next
-		slow_ptr = slow_ptr.next
-	}
-    fmt.Println()
-    list2 :=  slow_ptr.next
-    fmt.Println("Fist List -->>")
-	for node != slow_ptr.next {
-	    fmt.Printf("%v -> ", node.val)
-	    node = node.next
-	}
-	node = nil
-	fmt.Println()
-	fmt.Println("Second List -->>")
-	for list2 != nil {
-	    fmt.Printf("%v -> ", list2.val)
-	    list2 = list2.next
-	}
-
-}
-

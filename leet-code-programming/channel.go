@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-func main() {
+func main_() {
 	defer func() {
 		fmt.Println("world")
 	}()
@@ -19,7 +19,7 @@ func main() {
 // 	fmt.Printf("Goroutine %d ended\n", i)
 // 	wg.Done()
 // }
-// func main() {
+// func main_() {
 // 	no := 3
 // 	var wg sync.WaitGroup
 // 	for i := 0; i < no; i++ {
@@ -30,7 +30,7 @@ func main() {
 // 	fmt.Println("All go routines finished executing")
 // }
 
-// func main() {
+// func main_() {
 // 	var wg sync.WaitGroup
 // 	wg.Add(1)
 
@@ -64,7 +64,7 @@ func main() {
 // 	c <- sum
 // }
 
-// func main() {
+// func main_() {
 // 	s := []int{7, 2, 8, -9, 4, 0}
 // 	c := make(chan int)
 // 	go sum(s[:len(s)/2], c)

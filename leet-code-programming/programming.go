@@ -12,14 +12,14 @@ var printf = fmt.Printf
 
 // ============Tree ====
 
-type Tnode struct {
-	Val   int
-	Right *Tnode
-	Left  *Tnode
-}
-type Tree struct {
-	root *Tnode
-}
+// type Tnode struct {
+// 	Val   int
+// 	Right *Tnode
+// 	Left  *Tnode
+// }
+// type Tree struct {
+// 	root *Tnode
+// }
 
 // ============Linked List==
 type Node struct {
@@ -32,7 +32,7 @@ type LinkedList struct {
 	tail   *Node
 }
 
-func main() {
+func main_() {
 
 	// ================== Linked List ==========================
 	list1 := LinkedList{} // 1,2,6,3,4,5,6
@@ -197,7 +197,7 @@ func (l *LinkedList) reverseLinkList(head *Node) *Node {
 	return head
 }
 
-//https://leetcode.com/problems/remove-linked-list-elements/
+// https://leetcode.com/problems/remove-linked-list-elements/
 func (l *LinkedList) removeElements(head *Node, val int) *Node {
 	cur := head
 
@@ -210,7 +210,7 @@ func (l *LinkedList) removeElements(head *Node, val int) *Node {
 	return head
 }
 
-//============String====================
+// ============String====================
 func reverseString(str string) string {
 	print("Given String -", str)
 	rns := []rune(str) // convert to rune
@@ -360,14 +360,14 @@ func lengthOfLongestSubstring(s string) int {
 	}
 	return res
 }
-func max(s int, l int) int {
+func Max(s int, l int) int {
 	if s < l {
 		return l
 	}
 	return s
 }
 
-//==========bubble sorting ===================
+// ==========bubble sorting ===================
 func sortString(str string) string {
 	rns := []rune(str)
 	for i := 0; i < len(rns)-1; i++ {
@@ -380,7 +380,7 @@ func sortString(str string) string {
 	return string(rns)
 }
 
-//============Arrays==========================
+// ============Arrays==========================
 func twoSum(nums []int, target int) []int {
 	indexes := make([]int, 0)
 	for i, v := range nums {

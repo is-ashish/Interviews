@@ -9,7 +9,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func main() {
+func main_() {
 	router := mux.NewRouter()
 	router.Use(guidMiddleware)
 	router.HandleFunc("/ishealthy", handleIsHealthy).Methods(http.MethodGet)
@@ -38,7 +38,7 @@ func guidMiddleware(next http.Handler) http.Handler {
 // 	"fmt"
 // )
 
-// func main() {
+// func main_() {
 // 	// example of data sharing
 // 	ctx := context.Background()
 // 	ctx = addValue(ctx)

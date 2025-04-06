@@ -24,7 +24,7 @@ func divide(a int, b int, done chan bool) {
 	fmt.Printf("%d / %d = %d", a, b, a/b)
 }
 
-func main() {
+func main_() {
 	sum(5, 0)
 	fmt.Println("normally returned from main")
 }
@@ -57,7 +57,7 @@ func main() {
 // 	}
 // }
 
-// func main() {
+// func main_() {
 // 	defer fmt.Println("deferred call in main")
 // 	firstName := "Elon"
 // 	fullName(&firstName, nil)
@@ -83,7 +83,7 @@ func main() {
 // 		fmt.Println("Recovered from", r)
 // 	}
 // }
-// func main() {
+// func main_() {
 // 	slicePanic()
 // 	fmt.Println("normally returned from main")
 // }

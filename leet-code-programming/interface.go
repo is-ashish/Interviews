@@ -47,7 +47,7 @@ func (c circle) perimeter() float64 {
 
 }
 
-func main() {
+func main_() {
 
 	r := rectangle{4, 6}
 	c := circle{7}
