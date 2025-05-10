@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func main() {
+func main_() {
 	str := "abababab"
 	ang := "ab"
 	fmt.Println(anagram(str, ang))
