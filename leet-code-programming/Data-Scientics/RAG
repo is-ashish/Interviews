@@ -1,0 +1,11 @@
+20 RAG interview questions across 3 difficulty levels — click any question to reveal the answer, filter by level, or hit "Ask Claude to explain deeper" for any topic.
+
+Here's a quick cheat sheet on what each level covers:
+
+**Basic (6 questions)** — definitions, components, chunking, embeddings, vector databases, RAG vs fine-tuning. Expect these in any junior/mid-level role.
+
+**Intermediate (7 questions)** — hybrid search, re-ranking, query transformation, multi-turn conversations, evaluation metrics (RAGAS), context window management, metadata filtering. These show you've actually built a RAG system.
+
+**Advanced (7 questions)** — lost-in-the-middle problem, Agentic RAG, system design at scale, RAPTOR, hallucination prevention, GraphRAG, handling conflicting documents. These separate candidates who've shipped RAG in production.
+
+The most commonly asked questions in real interviews are hybrid search, re-ranking, evaluation metrics, and hallucination prevention — interviewers want to know you understand the failure modes, not just the happy path.

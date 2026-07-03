@@ -1,0 +1,70 @@
+1. How to reduce latency issue in Gen-AI Application -: ----------------------------  ✅
+“Latency in Gen‑AI apps comes from both model inference and retrieval. To reduce it, we can optimize the model (smaller, quantized, batched), streamline retrieval (efficient chunking, tuned vector stores, caching), and architect the system for speed (async calls, streaming, autoscaling). In practice, combining caching with streaming responses gives the biggest user‑perceived improvement.”
+
+
+2. Different stretegy about chunking -- ------------------------  ✅
+
+“Chunking is critical in RAG pipelines because embeddings work best on semantically coherent text. Fixed‑size chunking is simple but can break meaning. Recursive chunking preserves structure by splitting at natural boundaries. Overlap ensures context isn’t lost between chunks. Semantic chunking is the most advanced, using NLP to split by meaning. The choice depends on the data type and retrieval needs.”
+
+3. what is Context window  -----------------------------  ✅
+4. what is langchain and langGraph  ---------------------------  ✅
+
+5. Agent and Multi Agent   ------------------------  ✅
+
+👉 Agents = LLMs with decision‑making + tool‑using ability.
+
+• Instead of one agent doing everything, you design a workflow where agents pass tasks/results to each other.
+
+
+6. what is re-ranking -------------- -----------------------------  ✅
+
+In generative AI, re-ranking is the process of taking an initial list of candidate outputs (such as search results, recommendations, or generated answers) and reordering them to improve quality, relevance, or diversity. It acts as a refinement step after retrieval or generation, ensuring the final output better matches user needs.
+
+7. pickling and unpickling in python
+8. threading and multiprocessing
+9. Rag Pipeline
+
+
+10. Reduce Hellogenation -------------------------  ✅
+
+• Ground responses with retrieval (RAG) 📚 → Connect the model to external knowledge bases or documents so it generates answers based on real sources.
+
+• Verification layers ✅ → Add fact-checking models or re-ranking steps to confirm outputs against trusted data.
+• Prompt design 🎯 → Use clear, structured prompts that encourage evidence-based answers and allow the model to say “I don’t know.”
+• Fine-tuning & RLHF 🔧 → Train with curated datasets and human feedback to discourage unsupported claims.
+
+• Constrained decoding & filters 🛡️ → Apply rules or filters to block unsafe or unverified outputs.
+
+• Human-in-the-loop 👩‍💻 → For sensitive domains (medical, legal, finance), always review outputs before use.
+
+
+11. pickling and unpickling in python
+
+
+12. Keyword search and vector search different -------------------------  ✅
+
+• Keyword Search 🔍 → Finds documents by exact word matches. It’s fast and simple but misses meaning (e.g., “car” ≠ “automobile”).
+• Vector Search 🧭 → Finds documents by semantic meaning using embeddings. It understands context and synonyms but is more computationally heavy.
+
+13. what is remove, pop, and delete in python ------------------------  ✅
+
+• remove() → delete by value.
+• pop() → delete by index and returns the item.
+• del → delete by index or the whole list.
+
+14. what are component in Agent
+15. Component of langhchain
+16. How image and text both store in vector DB ?? to give accurate result
+
+
+17. what is zero shot  --------------------------  ✅
+
+🔑 What is Zero-shot?
+• Definition: Zero-shot is when an AI model solves a problem or generates an output without any prior task-specific training data.
+
+18. - What are the main safety challenges in LLMs? (Hallucinations, bias, toxic content, prompt injection)
+-----------------
+LLMs face risks of making things up (hallucinations), carrying biases, generating harmful text, and being manipulated through prompts. These are the key safety challenges researchers and developers are actively working to mitigate.
+
+
+19. what are componant of langchains.

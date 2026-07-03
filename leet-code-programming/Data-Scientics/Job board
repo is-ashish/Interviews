@@ -1,0 +1,41 @@
+ob description
+Grid Dynamics is seeking a Senior Data Scientist with strong expertise in generative AI to design and deploy end-to-end AI solutions. The role focuses on building RAG-based chatbots, LLM-powered analytics systems, and AI agents using frameworks like LangGraph, along with developing data pipelines using tools such as LlamaIndex.
+The candidate should have hands-on experience with vector databases, multiple LLM APIs (OpenAI, Gemini, Claude), and observability tools like LangSmith. A solid background in traditional machine learning (regression, classification, clustering) and proficiency in Python, PyTorch, or TensorFlow is also required.
+Additional expectations include experience with MLOps, containerization (Docker/Kubernetes), API development, and prompt engineering. Familiarity with fine-tuning LLMs, deploying open-source models, and cloud platforms is a plus.
+Essential functions
+Design and implement end-to-end generativeAIsolutions including RAG chatbots, LLM-powered BI systems, and coding agents
+Develop and deployAIagents using frameworks like LangGraph and similar orchestration tools
+Build robust data processing pipelines using LlamaIndex and related libraries for document ingestion and retrieval
+Implement and optimize vector databases for semantic search and retrieval systems
+Integrate multiple LLM providers (OpenAI, Gemini, Anthropic) and evaluate model performance
+Set up comprehensive observability and monitoring using tools like LangSmith
+Collaborate with engineering teams to productionize ML models andAIapplications
+Qualifications
+GenerativeAI(Minimum Requirements):
+3 -7 Years experience
+Hands-on experience with LangGraph or similarAIagent frameworks
+Proficiency with LlamaIndex, LangChain, or equivalent data processing libraries
+Experience with vector databases (Pinecone, Weaviate, Chroma, etc.)
+Working knowledge of multiple LLMs and their APIs (OpenAI GPT, Gemini, Claude)
+Experience with LLM observability tools (LangSmith, Weights Biases, etc.)
+Proven track record in building LLM BI solutions (natural language to SQL)
+Experience developing RAG (Retrieval-AugmentedGeneration) chatbots
+Experience with coding agents and codegenerationsystems
+TraditionalAI/ML:
+Strong foundation in clustering, regression, classification, and forecasting
+Proficiency with scikit-learn, PyTorch, TensorFlow
+Experience with statistical analysis and experimental design
+Knowledge of feature engineering and data preprocessing techniques
+Good to Have:
+Fine-tuning experience with LLMs, rerankers, or embedding models
+Self-hosting and deployment of open-source LLMs
+Experience with BERT, transformer architectures, or computer vision models (YOLO)
+MLOps experience with MLflow, Weights Biases, or TensorBoard
+Cloud platform certifications (AWS, GCP, Azure)
+Would be a plus
+Strong programming skills in Python
+Experience with containerization (Docker, Kubernetes)
+Knowledge of API development and microservices architecture
+Understanding of prompt engineering and prompt optimization techniques
+Experience with evaluation frameworks for LLM applications
+Familiarity with data privacy and security best practices forAIapplications

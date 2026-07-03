@@ -1,0 +1,31 @@
+1. Gil, why use multithreading, use of parallelism
+2. decorator implementation -- Use
+3. lambda functions -- Use
+4. reverse prograam - I love Python - Python Love I ------------------------------------------  ✅
+5. Deep copy and shalow copy -  program --------------------------------------------  ✅
+6. List based program ---------------------------------------------  ✅
+7. 
+
+============ Rag Based Questionsa AI  ===========
+1. Pipeline steps
+2. How to improve pipeline if user increase
+3. Authentication Used
+4. If keyword are not found - How do you handle this senario in rag
+5. What are embedding used - Model names
+6. Databased Used - Chroma/Faiss Why ?? ------------------------------  ✅
+7. Chucking stretegy --------------------------  ✅
+
+
+=========System Design =======
+1. If API is consuming a lot memory, how to fix this
+2. 
+
+
+=========Program ===== ---------------------------------- -----------  ✅
+
+def addItem(item, items =[]):
+    items.append(item)
+    return items
+
+print(addItem(1))
+print(addItem(2))

@@ -1,0 +1,6 @@
+car
+cycle
+train
+cycle
+walking
+bus

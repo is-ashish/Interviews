@@ -1,0 +1,39 @@
+## CAP Theorem — Simply Explained
+
+CAP theorem states that a **distributed system** can only guarantee **2 out of these 3 properties** at the same time:
+
+---### The 3 Properties
+
+**Consistency (C)** — Every node in your cluster returns the same, up-to-date data. If you write "price = $50" on Node A, reading from Node B also gives $50 — no stale data.
+
+**Availability (A)** — Every request gets a response (success or failure), no matter what. The system never hangs or refuses to answer.
+
+**Partition Tolerance (P)** — The system keeps working even when network communication between nodes breaks (a "partition").
+
+---
+
+### The Real-World Tradeoffs
+
+**CA — Consistency + Availability** (e.g. PostgreSQL, MySQL)
+> Works great on a single server or reliable network. If a network split happens, it may go down rather than serve bad data. Good for: banking, inventory systems.
+
+**CP — Consistency + Partition Tolerance** (e.g. MongoDB, HBase, Zookeeper)
+> Stays correct during a network split, but may reject requests ("I'd rather say nothing than give wrong data"). Good for: financial ledgers, config management.
+
+**AP — Availability + Partition Tolerance** (e.g. Cassandra, DynamoDB, CouchDB)
+> Never goes down, always responds — but different nodes might temporarily disagree on data. Good for: social media feeds, shopping carts, DNS.
+
+---
+
+### Simple Mental Model
+
+Imagine 3 ATMs in different cities sharing one bank account:
+
+| Scenario | What happens |
+|---|---|
+| Network is fine | All 3 can stay in sync — no tradeoff needed |
+| Network breaks | You must choose: **freeze the ATMs** (CP) or **let them run with possibly stale balance** (AP) |
+
+**CAP says: during a network failure, you can't have both consistency AND availability — pick one.**
+
+In practice, most modern distributed systems (like Cassandra) choose **AP** and add *eventual consistency* — nodes will sync up *eventually*, just not instantly.

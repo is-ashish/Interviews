@@ -1,0 +1,81 @@
+
+---
+
+## 🔹 **1. Core Basics (Must‑Know)**
+These test your fundamentals and pointer confidence.
+
+- Implement a singly linked list (insert at head, tail, delete node)
+- Find the length of a linked list
+- Search for an element in a linked list
+- Reverse a linked list (iterative + recursive)
+- Find the middle of a linked list (slow/fast pointers)
+- Detect a cycle in a linked list (Floyd’s algorithm)
+- Remove a cycle in a linked list
+- Merge two sorted linked lists
+- Delete a node without head pointer (classic trick question)
+
+---
+
+## 🔹 **2. Intermediate (Pointer Manipulation + Patterns)**
+These show up constantly in FAANG‑style rounds.
+
+- Reverse a linked list in groups of **k**
+- Check if a linked list is a palindrome
+- Find the intersection point of two linked lists
+- Remove duplicates from a sorted/unsorted linked list
+- Partition a linked list around a value (like QuickSort partition)
+- Rotate a linked list (left/right)
+- Add two numbers represented by linked lists (LeetCode 2)
+- Flatten a linked list (multi‑level linked list)
+- Sort a linked list using merge sort
+
+---
+
+## 🔹 **3. Advanced (Tricky + Conceptual Mastery)**
+These test your ability to reason about memory, structure, and edge cases.
+
+- Clone a linked list with random pointers
+- LRU Cache implementation (uses doubly linked list + hashmap)
+- Skip list basics (conceptual + insertion/deletion)
+- Reverse alternate nodes in a linked list
+- Reorder list (L0 → Ln → L1 → Ln-1…)
+- Swap nodes in pairs / swap Kth node from start & end
+- Segregate even and odd nodes
+- Delete nodes having greater value on the right
+- Convert binary number in linked list to integer
+
+---
+
+## 🔹 **4. Expert / System‑Design‑Adjacent**
+These are rare but impressive if you can solve them.
+
+- Implement a memory‑efficient XOR linked list
+- Implement a concurrent (thread‑safe) linked list
+- Design a custom allocator using linked lists (free list)
+- Implement a persistent linked list (functional programming concept)
+- Linked list cycle detection in distributed systems (conceptual)
+
+---
+
+## 🔹 **5. Company‑Specific Favorites**
+These appear repeatedly in interviews at top companies:
+
+| Company | Common Linked List Questions |
+|--------|------------------------------|
+| **Google** | Reverse in k‑groups, random pointer clone, cycle detection |
+| **Amazon** | Add numbers, intersection, palindrome check |
+| **Microsoft** | LRU cache, merge sorted lists, flatten list |
+| **Meta** | Reorder list, swap nodes, deep copy list |
+| **Uber** | Partition list, rotate list, skip list basics |
+
+---
+
+## Want to go deeper?
+I can also create:
+
+- A **practice roadmap** (7‑day or 14‑day)
+- A **mock interview set** with increasing difficulty
+- **Code templates** in Golang or Python (your strengths)
+- A **cheat sheet** of patterns (slow/fast pointers, dummy nodes, recursion)
+
+If you want, I can assemble a **curated problem list with links** tailored to your interview timeline.

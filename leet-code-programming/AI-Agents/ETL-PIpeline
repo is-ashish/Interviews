@@ -1,0 +1,15 @@
+**ETL** stands for **Extract → Transform → Load**. In a traditional data engineering context it's a batch pipeline that moves data between systems. In an agent system, each of those three stages becomes an intelligent agent — capable of reasoning, handling messy real-world data, and making decisions that a dumb script cannot.
+
+Let's first see the classic ETL flow, then how agents upgrade each stage.Now let's see the full agentic ETL with a Python implementation — click through each stage to see the real code.## How an agentic ETL differs from a traditional one
+
+A traditional ETL is a rigid script — it breaks on unexpected input and someone has to fix it manually. An agentic ETL treats each stage as an autonomous agent that can reason about what it's seeing.
+
+The three upgrades agents bring:
+
+**In Extract** — instead of hard-coded API calls that fail silently, an agent can decide to retry with backoff, fall back to a cached copy, or alert the orchestrator that a source is unreliable. It tracks provenance on every record.
+
+**In Transform** — this is where agents shine the most. A rule-based script can't fix a garbled product name or infer a missing currency from surrounding context. An LLM-powered transform agent can. It validates against a Pydantic schema first, then hands failures to the LLM for repair, and quarantines anything it genuinely can't fix for human review.
+
+**In Load** — the agent writes to multiple destinations atomically (relational DB + vector store + search index) and returns structured metrics. The orchestrator reads those metrics and decides whether the run was healthy or needs a re-run.
+
+The orchestrator above wraps all three stages with retry logic and exponential backoff. If Extract fails twice it raises; if it succeeds on the third try, the pipeline continues. This is the failure resilience a cron job simply cannot provide.

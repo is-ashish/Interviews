@@ -1,0 +1,17 @@
+1. Superwised and Unsuperwised 
+2. Monothelic to Microservice architeture what are key things consider
+
+
+-----------  ✅
+
+3. An API is consuming by Another microservice -: How to manage deployment with zero downtime
+
+4. Using Python and fast api -  -----------  ✅
+   endpoint-: /order/summary, 
+    input is list of orderID
+    ==
+
+    Aggregate order Count by another microservice api.  
+    handle failure and resiliency.
+    
+5. How do you scale monolithic application with faster

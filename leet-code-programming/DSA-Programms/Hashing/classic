@@ -1,0 +1,122 @@
+Absolutely — if you want to **master hashing**, the best way is to explore all the classic **Two‑Sum variations**. These show up constantly in interviews because they test your ability to adapt the same hashing pattern to different constraints.
+
+Here’s a crisp, structured list of **“More Two‑Sum Problems”** that build on the original.
+
+---
+
+# ✅ **1. Two Sum II – Input Array Is Sorted**
+**Twist:** Array is sorted  
+**Approach:** Two pointers (no hashing needed)  
+**Time:** O(n)
+
+---
+
+# ✅ **2. Two Sum – Return the Actual Numbers (Not Indices)**
+Same logic, but return values instead of indices.
+
+---
+
+# ✅ **3. Two Sum – All Unique Pairs**
+Find *all* unique pairs that sum to target.
+**Approach:** Hash set + avoid duplicates.
+
+---
+
+# ✅ **4. Two Sum – Count Number of Pairs**
+Instead of returning pairs, return **how many** pairs exist.
+
+---
+
+# ✅ **5. Two Sum – With Duplicates Allowed**
+Handle cases like:
+```
+nums = [1,1,1,1], target = 2
+```
+Count all valid combinations.
+
+---
+
+# ✅ **6. Two Sum – Streaming Data**
+Numbers come one by one (like a live feed).  
+You must answer queries like:
+```
+add(x)
+find(target)
+```
+**Approach:** Hash map storing frequencies.
+
+---
+
+# ✅ **7. Two Sum – In a BST**
+Given a Binary Search Tree, find if two nodes sum to target.  
+**Approach:**  
+- In‑order traversal → sorted list → two pointers  
+OR  
+- Hash set during traversal
+
+---
+
+# ✅ **8. Two Sum – In a Linked List**
+Same logic, but you must traverse the list and use a hash set.
+
+---
+
+# ✅ **9. Two Sum – Closest Pair**
+Find the pair whose sum is **closest** to target.  
+**Approach:** Two pointers after sorting.
+
+---
+
+# ✅ **10. Two Sum – Using Only O(1) Extra Space**
+You cannot use a hash map.  
+**Approach:** Sort + two pointers.
+
+---
+
+# ✅ **11. Two Sum – On a Large Dataset (Memory Constraints)**
+When the array is too large to fit in memory.  
+**Approach:**  
+- External sorting  
+- Chunk processing  
+- Hash partitioning
+
+---
+
+# ✅ **12. Two Sum – On a Distributed System**
+Classic system design warm‑up.  
+**Approach:**  
+- Shard data by hash(key)  
+- Each machine solves local Two‑Sum  
+- Combine results
+
+---
+
+# ✅ **13. Two Sum – Using Bitset (When numbers are small)**
+If numbers are small (e.g., 0–10⁶), use a bitset instead of a hash map.
+
+---
+
+# ✅ **14. Two Sum – Negative Numbers Allowed**
+Hashing handles this naturally, but two‑pointer approach needs sorting.
+
+---
+
+# ✅ **15. Two Sum – Return All Index Pairs**
+Example:
+```
+nums = [1,2,3,4,3], target = 6
+Output: (1,3), (2,4)
+```
+Use hash map of lists.
+
+---
+
+# ✅ Want Golang solutions for all of these?
+I can walk you through each one with:
+
+- Clean Go code  
+- Time/space complexity  
+- Hashing pattern explanation  
+- Edge cases  
+
+Just tell me which one you want to start with — or I can generate a **full cheat sheet** for all 15 in Go.
